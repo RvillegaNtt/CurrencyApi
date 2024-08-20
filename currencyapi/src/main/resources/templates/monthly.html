@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Análisis de moneda mensual</title>
+</head>
+<body>
+<h1>Análisis de moneda mensual</h1>
+
+<p>Valor del primer día: <span th:text="${firstDayValue}"></span></p>
+<p>Valor del ultimo día: <span th:text="${lastDayValue}"></span></p>
+<p>Diferencia: <span th:text="${difference}"></span></p>
+<p>Porcentaje de cambio: <span th:text="${percentageChange}"></span></p>
+<p>Promedio: <span th:text="${average}"></span></p>
+<p>Moda: <span th:text="${mode}"></span></p>
+</body>
+</html>

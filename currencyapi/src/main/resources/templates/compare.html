@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Valores</title>
+</head>
+<body>
+<h1>Comparar Valores</h1>
+<div>
+    <p>Valor Actual: <span th:text="${currentUtmValue}">UF Value</span></p>
+    <p>Valor Anterior: <span th:text="${previousUtmValue}">UF Value</span></p>
+    <p>Diferencia: <span th:text="${utmDifference}">UF Value</span></p>
+    <p>Porcentaje de Cambio: <span th:text="${utmPercentageChange}">UF Value</span></p>
+</div>
+</body>
+</html>

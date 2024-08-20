@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Currency API</title>
+</head>
+<body>
+<h1>Indicadores económicos diarios</h1>
+<div>
+    <p>UF: <span th:text="${ufValor}">UF Value</span></p>
+    <p>Dollar: <span th:text="${dollarValor}">UF Value</span></p>
+    <p>Euro: <span th:text="${euroValor}">UF Value</span></p>
+    <p>UTM: <span th:text="${utmValor}">UF Value</span></p>
+</div>
+<form action="/compare" method="get">
+    <label for="date">Fecha:</label>
+    <input type="text" id="date" name="date" pattern="\d{2}-\d{2}-\d{4}" placeholder="dd-mm-yyyy" title="Fecha en formato dd-mm-yyyy" required>
+    <label for="codigoCurrency">Codigo de moneda:</label>
+    <input type="text" id="codigoCurrency" name="codigoCurrency">
+    <button type="submit" id="btnSubmit">Buscar por fecha</button>
+</form>
+<form action="/monthly" method="get">
+    <label for="year">Año:</label>
+    <input type="number" id="year" name="year" required>
+    <label for="month">Mes:</label>
+    <input type="number" id="month" name="month" required>
+    <label for="monthlyCurrency">Codigo de moneda:</label>
+    <input type="text" id="monthlyCurrency" name="monthlyCurrency">
+    <button type="submit">Obtener Datos mensuales</button>
+</form>
+<form action="/yearly" method="get">
+    <label for="year">Año:</label>
+    <input type="number" id="year" name="year" required>
+    <label for="yearlyCurrency">Codigo de moneda:</label>
+    <input type="text" id="yearlyCurrency" name="yearlyCurrency" required>
+    <button type="submit">Obtener Datos Anuales</button>
+</form>
+<div th:if="${errorMessage}">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+</body>
+</html>
